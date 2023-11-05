@@ -31,6 +31,10 @@ public class ModItemModelsProvider extends ItemModelProvider {
         fenceItem(ModBlocks.SAPPHIRE_FENCE, ModBlocks.SAPPHIRE_BLOCK);
         buttonItem(ModBlocks.SAPPHIRE_BUTTON, ModBlocks.SAPPHIRE_BLOCK);
         wallItem(ModBlocks.SAPPHIRE_WALL, ModBlocks.SAPPHIRE_BLOCK);
+
+        customBlock(ModBlocks.SAPPHIRE_STAIRS);
+        customBlock(ModBlocks.SAPPHIRE_SLABS);
+        customTrapDoor(ModBlocks.SAPPHIRE_TRAPDOOR);
     }
 
 
@@ -53,6 +57,13 @@ public class ModItemModelsProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Main.MODID, "item/" + item.getId().getPath()));
+    }
+
+    public ItemModelBuilder customBlock(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(), new ResourceLocation(Main.MODID, "block/" + item.getId().getPath()));
+    }
+    public ItemModelBuilder customTrapDoor(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(), new ResourceLocation(Main.MODID, "block/" + item.getId().getPath() + "_bottom"));
     }
 
     public ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
