@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "test_mod:sapphire_from_smelting_raw_sapphire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "unlock": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "test_mod:raw_sapphire"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "unlock",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "test_mod:sapphire_from_smelting_raw_sapphire"
+    ]
+  },
+  "sends_telemetry_event": false
+}
