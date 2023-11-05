@@ -1,9 +1,0 @@
-// 1.20.1	2023-10-13T22:35:23.7555654	Recipes
-6e579d38a57cb6f3e568555aa0d8b5cea879984e data/test_mod/advancements/recipes/misc/sapphire.json
-35150d610389000ab61003151952a8260c54d48f data/test_mod/advancements/recipes/misc/sapphire_block.json
-e5c0925c3bc731d80a04e96a145f8462925e6484 data/test_mod/advancements/recipes/misc/sapphire_from_blasting_raw_sapphire.json
-8e7412f1fe87a84cf449e1f156a9d360b76d0912 data/test_mod/advancements/recipes/misc/sapphire_from_smelting_raw_sapphire.json
-d60319d250ea38d1819e5a7f6a286754128ff8e9 data/test_mod/recipes/sapphire.json
-cf5e329e51da2e11309cd820c4fd5a3628678832 data/test_mod/recipes/sapphire_block.json
-c70329e327cfec0fe07f35ead0a2ed12b01159e3 data/test_mod/recipes/sapphire_from_blasting_raw_sapphire.json
-7c2fa6232dda1c42f4547969109e2c2f1184a416 data/test_mod/recipes/sapphire_from_smelting_raw_sapphire.json

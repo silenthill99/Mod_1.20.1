@@ -35,6 +35,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         customBlock(ModBlocks.SAPPHIRE_STAIRS);
         customBlock(ModBlocks.SAPPHIRE_SLABS);
         customTrapDoor(ModBlocks.SAPPHIRE_TRAPDOOR);
+        customBlock(ModBlocks.SAPPHIRE_PRESSURE_PLATE);
+        customBlock(ModBlocks.SAPPHIRE_FENCE_GATE);
     }
 
 
