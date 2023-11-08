@@ -52,7 +52,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
     public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
-                .texture("texture", new ResourceLocation(Main.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("wall", new ResourceLocation(Main.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     public ItemModelBuilder simpleItem(RegistryObject<Item> item) {
