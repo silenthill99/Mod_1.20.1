@@ -9,8 +9,6 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 
-import java.util.function.Consumer;
-
 public class RecipeGenerator extends RecipeProvider
 {
     public RecipeGenerator(PackOutput p_248933_)
@@ -19,8 +17,7 @@ public class RecipeGenerator extends RecipeProvider
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
-    {
+    protected void buildRecipes(RecipeOutput consumer) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
                 .requires(ModBlocks.SAPPHIRE_BLOCK.get())
                 .unlockedBy("unlock", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.SAPPHIRE_BLOCK.get()))

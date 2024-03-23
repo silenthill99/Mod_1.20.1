@@ -8,7 +8,6 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -33,13 +32,15 @@ public class Main
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
 
-        MinecraftForge.EVENT_BUS.register(this);
         ModItems.ITEMS.register(modEventBus);
-        ModItemGroup.CREATIVE_MODE_TAB.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
+        ModItemGroup.CREATIVE_MODE_TAB.register(modEventBus);
+
+        MinecraftForge.EVENT_BUS.register(this);
+        
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
+    private void commonSetup(FMLCommonSetupEvent event)
     {
 
     }
