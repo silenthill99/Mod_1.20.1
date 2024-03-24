@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -57,7 +58,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     public void buttonBlock(ButtonBlock block, ResourceLocation texture) {
         super.buttonBlock(block, texture);
-        simpleBlockItem(block, models().button(ForgeRegistries.BLOCKS.getKey(block).getPath() + "_inventory",
+        simpleBlockItem(block, models().buttonInventory(ForgeRegistries.BLOCKS.getKey(block).getPath() + "_inventory",
                 texture));
     }
 
@@ -66,5 +67,38 @@ public class ModBlockStateProvider extends BlockStateProvider {
         super.wallBlock(block, texture);
         simpleBlockItem(block, models().wallInventory(ForgeRegistries.BLOCKS.getKey(block).getPath() +
                 "_inventory", texture));
+    }
+
+    @Override
+    public void stairsBlock(StairBlock block, ResourceLocation texture) {
+        super.stairsBlock(block, texture);
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath())));
+    }
+
+    @Override
+    public void slabBlock(SlabBlock block, ResourceLocation doubleslab, ResourceLocation texture) {
+        super.slabBlock(block, doubleslab, texture);
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" +
+                ForgeRegistries.BLOCKS.getKey(block).getPath())));
+    }
+
+    @Override
+    public void trapdoorBlockWithRenderType(TrapDoorBlock block, ResourceLocation texture, boolean orientable, String renderType) {
+        super.trapdoorBlockWithRenderType(block, texture, orientable, renderType);
+        simpleBlockItem(block, models().trapdoorOrientableBottom(ForgeRegistries.BLOCKS.getKey(block).getPath() + "_bottom", texture));
+    }
+
+    @Override
+    public void pressurePlateBlock(PressurePlateBlock block, ResourceLocation texture) {
+        super.pressurePlateBlock(block, texture);
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" +
+                ForgeRegistries.BLOCKS.getKey(block).getPath())));
+    }
+
+    @Override
+    public void fenceGateBlock(FenceGateBlock block, ResourceLocation texture) {
+        super.fenceGateBlock(block, texture);
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" +
+                ForgeRegistries.BLOCKS.getKey(block).getPath())));
     }
 }

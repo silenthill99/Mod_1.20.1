@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelsProvider extends ItemModelProvider {
@@ -27,32 +26,13 @@ public class ModItemModelsProvider extends ItemModelProvider {
         simpleItem(ModItems.STRAWBERRY);
 
         simpleBlockItem(ModBlocks.SAPPHIRE_DOOR);
-
-        wallItem(ModBlocks.SAPPHIRE_WALL, ModBlocks.SAPPHIRE_BLOCK);
-
-        customBlock(ModBlocks.SAPPHIRE_STAIRS);
-        customBlock(ModBlocks.SAPPHIRE_SLABS);
-        customTrapDoor(ModBlocks.SAPPHIRE_TRAPDOOR);
-        customBlock(ModBlocks.SAPPHIRE_PRESSURE_PLATE);
-        customBlock(ModBlocks.SAPPHIRE_FENCE_GATE);
     }
 
-    public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
-        withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall", new ResourceLocation(Main.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
-    }
 
     public ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Main.MODID, "item/" + item.getId().getPath()));
-    }
-
-    public ItemModelBuilder customBlock(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation(Main.MODID, "block/" + item.getId().getPath()));
-    }
-    public ItemModelBuilder customTrapDoor(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation(Main.MODID, "block/" + item.getId().getPath() + "_bottom"));
     }
 
     public ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
