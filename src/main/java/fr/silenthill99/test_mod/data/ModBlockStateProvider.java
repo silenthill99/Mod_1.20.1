@@ -3,9 +3,11 @@ package fr.silenthill99.test_mod.data;
 import fr.silenthill99.test_mod.Main;
 import fr.silenthill99.test_mod.init.ModBlocks;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -43,5 +45,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    @Override
+    public void fenceBlock(FenceBlock block, ResourceLocation texture) {
+        super.fenceBlock(block, texture);
+        simpleBlockItem(block, models().fenceInventory(ForgeRegistries.BLOCKS.getKey(block).getPath() +
+                "_inventory", texture));
+    }
+
+    @Override
+    public void buttonBlock(ButtonBlock block, ResourceLocation texture) {
+        super.buttonBlock(block, texture);
+        simpleBlockItem(block, models().button(ForgeRegistries.BLOCKS.getKey(block).getPath() + "_inventory",
+                texture));
+    }
+
+    @Override
+    public void wallBlock(WallBlock block, ResourceLocation texture) {
+        super.wallBlock(block, texture);
+        simpleBlockItem(block, models().wallInventory(ForgeRegistries.BLOCKS.getKey(block).getPath() +
+                "_inventory", texture));
     }
 }

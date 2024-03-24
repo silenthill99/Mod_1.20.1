@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "test_mod:block/sapphire_block"
-  }
+  "parent": "test_mod:block/sapphire_wall_inventory"
 }

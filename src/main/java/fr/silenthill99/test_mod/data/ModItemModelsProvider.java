@@ -28,8 +28,6 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
         simpleBlockItem(ModBlocks.SAPPHIRE_DOOR);
 
-        fenceItem(ModBlocks.SAPPHIRE_FENCE, ModBlocks.SAPPHIRE_BLOCK);
-        buttonItem(ModBlocks.SAPPHIRE_BUTTON, ModBlocks.SAPPHIRE_BLOCK);
         wallItem(ModBlocks.SAPPHIRE_WALL, ModBlocks.SAPPHIRE_BLOCK);
 
         customBlock(ModBlocks.SAPPHIRE_STAIRS);
@@ -37,17 +35,6 @@ public class ModItemModelsProvider extends ItemModelProvider {
         customTrapDoor(ModBlocks.SAPPHIRE_TRAPDOOR);
         customBlock(ModBlocks.SAPPHIRE_PRESSURE_PLATE);
         customBlock(ModBlocks.SAPPHIRE_FENCE_GATE);
-    }
-
-
-    public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
-        withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture", new ResourceLocation(Main.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
-    }
-
-    public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
-        withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
-                .texture("texture", new ResourceLocation(Main.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {

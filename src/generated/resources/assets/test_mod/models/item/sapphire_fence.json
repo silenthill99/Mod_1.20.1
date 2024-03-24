@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/fence_inventory",
-  "textures": {
-    "texture": "test_mod:block/sapphire_block"
-  }
+  "parent": "test_mod:block/sapphire_fence_inventory"
 }
