@@ -6,13 +6,13 @@
   },
   "perspectives": {
     "gui": {
-      "parent": "test_mod:item/sapphire_staff_3d"
+      "parent": "test_mod:item/sapphire_staff_2d"
     },
     "ground": {
-      "parent": "test_mod:item/sapphire_staff_3d"
+      "parent": "test_mod:item/sapphire_staff_2d"
     },
     "fixed": {
-      "parent": "test_mod:item/sapphire_staff_3d"
+      "parent": "test_mod:item/sapphire_staff_2d"
     }
   }
 }
