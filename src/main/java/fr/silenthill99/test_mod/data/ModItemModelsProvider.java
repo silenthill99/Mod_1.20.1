@@ -28,7 +28,6 @@ public class ModItemModelsProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.SAPPHIRE_DOOR);
     }
 
-
     public ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",

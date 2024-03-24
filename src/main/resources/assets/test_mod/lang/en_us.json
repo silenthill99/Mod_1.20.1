@@ -7,12 +7,6 @@
   "block.test_mod.sapphire_ore": "Sapphire Ore",
   "block.test_mod.sound_block": "Sound Block",
   "creativetab.tutorial_tab": "Sapphire Tutorial Tab",
-  "item.test_mod.metal_detector": "Metal Detector",
-  "item.test_mod.pine_cone": "Pine Cone",
-  "item.test_mod.raw_sapphire": "Raw Sapphire",
-  "item.test_mod.sapphire": "Sapphire",
-  "item.test_mod.strawberry": "Strawberry",
-  "tooltip.test_mod.metal_detector.tooltip": "Finds valuables underground!",
   "block.test_mod.sapphire_stairs": "Sapphire stairs",
   "block.test_mod.sapphire_slabs": "Sapphire slabs",
   "block.test_mod.sapphire_button": "Sapphire button",
@@ -21,5 +15,11 @@
   "block.test_mod.sapphire_fence_gate": "Sapphire fence gate",
   "block.test_mod.sapphire_wall": "Sapphire wall",
   "block.test_mod.sapphire_door": "Sapphire door",
-  "block.test_mod.sapphire_trapdoor": "Sapphire trapdoor"
+  "block.test_mod.sapphire_trapdoor": "Sapphire trapdoor","item.test_mod.metal_detector": "Metal Detector",
+  "item.test_mod.pine_cone": "Pine Cone",
+  "item.test_mod.raw_sapphire": "Raw Sapphire",
+  "item.test_mod.sapphire": "Sapphire",
+  "item.test_mod.sapphire_staff": "Sapphire staff",
+  "item.test_mod.strawberry": "Strawberry",
+  "tooltip.test_mod.metal_detector.tooltip": "Finds valuables underground!"
 }
