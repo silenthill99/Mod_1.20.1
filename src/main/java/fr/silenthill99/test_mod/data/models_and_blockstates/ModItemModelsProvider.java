@@ -25,6 +25,10 @@ public class ModItemModelsProvider extends ItemModelProvider {
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.PINE_CONE);
         simpleItem(ModItems.STRAWBERRY);
+        simpleItem(ModItems.SAPPHIRE_HELMET);
+        simpleItem(ModItems.SAPPHIRE_CHESTPLATE);
+        simpleItem(ModItems.SAPPHIRE_LEGGINGS);
+        simpleItem(ModItems.SAPPHIRE_BOOTS);
 
         simpleBlockItem(ModBlocks.SAPPHIRE_DOOR);
 
