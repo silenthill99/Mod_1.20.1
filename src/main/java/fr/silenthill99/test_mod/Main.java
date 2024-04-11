@@ -2,8 +2,11 @@ package fr.silenthill99.test_mod;
 
 import com.mojang.logging.LogUtils;
 import fr.silenthill99.test_mod.init.ModBlocks;
+import fr.silenthill99.test_mod.init.ModEntityTypes;
 import fr.silenthill99.test_mod.init.ModItems;
+import fr.silenthill99.test_mod.init.entities.client.RhinoRenderer;
 import fr.silenthill99.test_mod.utils.ModItemGroup;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -35,6 +38,7 @@ public class Main
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModItemGroup.CREATIVE_MODE_TAB.register(modEventBus);
+        ModEntityTypes.ENTITIES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         
@@ -64,8 +68,8 @@ public class Main
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntityTypes.RHINO.get(), RhinoRenderer::new);
         }
     }
 }
