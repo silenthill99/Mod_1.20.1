@@ -1,4 +1,4 @@
-// 1.20.1	2023-11-05T21:49:06.7296648	Tags for minecraft:block mod id test_mod
+// 1.20.4	2024-03-24T22:27:35.7362483	Tags for minecraft:block mod id test_mod
 8b15ceed31a574941ceef1a86f1d5267e2e99b0c data/forge/tags/blocks/needs_netherite_tool.json
 723fed1c8265920afd535a170c4e0464a467b6e8 data/minecraft/tags/blocks/fences.json
 16270f582c80b0891e54d2311d37dcadd056ee31 data/minecraft/tags/blocks/fence_gates.json
@@ -8,3 +8,4 @@ d9ba5cedefff21414f5d736bbe12a2348d2c1509 data/minecraft/tags/blocks/needs_iron_t
 f518e21a0ffb0b371e5df7653854cfc0d1ed681b data/minecraft/tags/blocks/needs_stone_tool.json
 485c680034fd5a3d7b8ab10030a60703f48e5f2f data/minecraft/tags/blocks/walls.json
 b03f3559928481ab75db86dc54fc9a9094d7b577 data/test_mod/tags/blocks/metal_detector_valuables.json
+ea55bb8b03989eaf7c9a82baa686ab8176d7e52c data/test_mod/tags/blocks/needs_sapphire_tool.json

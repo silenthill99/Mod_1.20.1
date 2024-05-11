@@ -19,8 +19,7 @@ public class RecipeGenerator extends RecipeProvider
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
-    {
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
                 .requires(ModBlocks.SAPPHIRE_BLOCK.get())
                 .unlockedBy("unlock", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.SAPPHIRE_BLOCK.get()))

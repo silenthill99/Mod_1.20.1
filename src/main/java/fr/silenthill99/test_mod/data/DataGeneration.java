@@ -2,6 +2,8 @@ package fr.silenthill99.test_mod.data;
 
 import fr.silenthill99.test_mod.Main;
 import fr.silenthill99.test_mod.data.loots.ModLootTableProvider;
+import fr.silenthill99.test_mod.data.models_and_blockstates.ModBlockStateProvider;
+import fr.silenthill99.test_mod.data.models_and_blockstates.ModItemModelsProvider;
 import fr.silenthill99.test_mod.data.recipes.RecipeGenerator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;

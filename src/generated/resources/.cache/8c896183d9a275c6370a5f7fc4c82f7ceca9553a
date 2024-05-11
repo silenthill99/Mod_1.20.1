@@ -1,15 +1,16 @@
-// 1.20.1	2023-11-05T22:06:31.4890582	Item Models: test_mod
+// 1.20.4	2024-03-25T23:12:14.7950989	Item Models: test_mod
 e6e9161800e117c2b7fb1424d498a63ea1182c35 assets/test_mod/models/item/metal_detector.json
 f4231ef41bc6dbdfdfcac0e2c645e0bd2b537383 assets/test_mod/models/item/pine_cone.json
 3c7c81930891b415544d189465c4299935cb4f42 assets/test_mod/models/item/raw_sapphire.json
 a757524f4b9461400ff32c807e76a27c84ffd8e1 assets/test_mod/models/item/sapphire.json
-14e987d69ba6b6d0213b29261a1413eff82bf95b assets/test_mod/models/item/sapphire_button.json
+d9ee2ee696a3c44f1a7c3ee9af338cb27b2edaa1 assets/test_mod/models/item/sapphire_axe.json
+95ab7540a333e781642825e1e08b3b7d337ca9b4 assets/test_mod/models/item/sapphire_boots.json
+5a22fabf2ad574df66936a79b2eaa13c3ee00f8e assets/test_mod/models/item/sapphire_chestplate.json
 ed9cf99e919257f55a9fd95f254f8e716a6b3f9b assets/test_mod/models/item/sapphire_door.json
-9772a16b8bb53215fbdc557f911c5f95827d9654 assets/test_mod/models/item/sapphire_fence.json
-7dde0d1e832066533acfd529c72cefe06265b6df assets/test_mod/models/item/sapphire_fence_gate.json
-33bcf15a13931d613ac5cf136eae4c126680c874 assets/test_mod/models/item/sapphire_pressure_plate.json
-268747340b38bcdff2b1e826b285075eba622409 assets/test_mod/models/item/sapphire_slabs.json
-a39e4aa7b6ccf9b1fcd2f8d68f3f332d7cf45c1d assets/test_mod/models/item/sapphire_stairs.json
-76cb9810333bc515a540dcb31f517b04d0355cda assets/test_mod/models/item/sapphire_trapdoor.json
-b5ad6be6bf38649cd12e73635199f894ed221c94 assets/test_mod/models/item/sapphire_wall.json
+076d521372edf75fa40800e919d0b3514dfa4e4b assets/test_mod/models/item/sapphire_helmet.json
+730b183c0b6b0c092c4bf8733a4eb8d6f529712a assets/test_mod/models/item/sapphire_hoe.json
+9ede6f020e2603f9c80f964cf97f7db947ccc3e3 assets/test_mod/models/item/sapphire_leggings.json
+a7c863b24e73f98c63d63ac30f7147640b576db6 assets/test_mod/models/item/sapphire_pickaxe.json
+868fff012acc8ae9e6a7f6d3fbb71f6d80b4e3d1 assets/test_mod/models/item/sapphire_shovel.json
+d725cf8027257b7270401949a173128e9c458ba1 assets/test_mod/models/item/sapphire_sword.json
 ec1ba5c212808bcee5a1afd4662b9a3b24ee751a assets/test_mod/models/item/strawberry.json

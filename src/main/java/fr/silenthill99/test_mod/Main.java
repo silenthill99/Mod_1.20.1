@@ -2,13 +2,15 @@ package fr.silenthill99.test_mod;
 
 import com.mojang.logging.LogUtils;
 import fr.silenthill99.test_mod.init.ModBlocks;
+import fr.silenthill99.test_mod.init.ModEntityTypes;
 import fr.silenthill99.test_mod.init.ModItems;
+import fr.silenthill99.test_mod.init.entities.client.RhinoRenderer;
 import fr.silenthill99.test_mod.utils.ModItemGroup;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -33,13 +35,16 @@ public class Main
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
 
-        MinecraftForge.EVENT_BUS.register(this);
         ModItems.ITEMS.register(modEventBus);
-        ModItemGroup.CREATIVE_MODE_TAB.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
+        ModItemGroup.CREATIVE_MODE_TAB.register(modEventBus);
+        ModEntityTypes.ENTITIES.register(modEventBus);
+
+        MinecraftForge.EVENT_BUS.register(this);
+        
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
+    private void commonSetup(FMLCommonSetupEvent event)
     {
 
     }
@@ -63,8 +68,8 @@ public class Main
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntityTypes.RHINO.get(), RhinoRenderer::new);
         }
     }
 }
