@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "unlock"
+      "unlock",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "test_mod:sapphire"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

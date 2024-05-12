@@ -42,5 +42,15 @@ public class RecipeGenerator extends RecipeProvider
                 .unlockedBy("unlock", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_SAPPHIRE.get()))
                 .group("sapphire")
                 .save(consumer, new ResourceLocation(Main.MODID, "sapphire_from_smelting_raw_sapphire"));
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.SAPPHIRE_DOOR.get(), 3)
+                .group("door")
+                .pattern("00")
+                .pattern("00")
+                .pattern("00")
+                .define('0', ModBlocks.SAPPHIRE_BLOCK.get())
+                .unlockedBy("unlock", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.SAPPHIRE_BLOCK.get()))
+                .save(consumer);
     }
 }

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "door",
+  "key": {
+    "0": {
+      "item": "test_mod:sapphire_block"
+    }
+  },
+  "pattern": [
+    "00",
+    "00",
+    "00"
+  ],
+  "result": {
+    "count": 3,
+    "item": "test_mod:sapphire_door"
+  },
+  "show_notification": true
+}
