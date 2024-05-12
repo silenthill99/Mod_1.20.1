@@ -1,4 +1,4 @@
-package fr.silenthill99.test_mod.init.entities.client;
+package fr.silenthill99.test_mod.custom.entities.client;
 
 import fr.silenthill99.test_mod.Main;
 import net.minecraft.client.model.geom.ModelLayerLocation;

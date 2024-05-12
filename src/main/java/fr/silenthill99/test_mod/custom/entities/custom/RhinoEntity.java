@@ -1,4 +1,4 @@
-package fr.silenthill99.test_mod.init.entities.custom;
+package fr.silenthill99.test_mod.custom.entities.custom;
 
 import fr.silenthill99.test_mod.init.ModEntityTypes;
 import net.minecraft.server.level.ServerLevel;

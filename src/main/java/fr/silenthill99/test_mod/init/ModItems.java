@@ -1,8 +1,8 @@
 package fr.silenthill99.test_mod.init;
 
 import fr.silenthill99.test_mod.Main;
-import fr.silenthill99.test_mod.init.items.FuelItem;
-import fr.silenthill99.test_mod.init.items.MetalDetectorItem;
+import fr.silenthill99.test_mod.custom.items.FuelItem;
+import fr.silenthill99.test_mod.custom.items.MetalDetectorItem;
 import fr.silenthill99.test_mod.utils.ModArmorMaterials;
 import fr.silenthill99.test_mod.utils.ModToolTiers;
 import net.minecraft.world.item.*;

@@ -1,4 +1,4 @@
-package fr.silenthill99.test_mod.init.items;
+package fr.silenthill99.test_mod.custom.items;
 
 import fr.silenthill99.test_mod.utils.ModTags;
 import net.minecraft.client.resources.language.I18n;
@@ -12,7 +12,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 

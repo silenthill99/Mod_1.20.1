@@ -1,8 +1,8 @@
 package fr.silenthill99.test_mod.events;
 
 import fr.silenthill99.test_mod.Main;
-import fr.silenthill99.test_mod.init.entities.client.ModModelLayer;
-import fr.silenthill99.test_mod.init.entities.client.RhinoModel;
+import fr.silenthill99.test_mod.custom.entities.client.ModModelLayer;
+import fr.silenthill99.test_mod.custom.entities.client.RhinoModel;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

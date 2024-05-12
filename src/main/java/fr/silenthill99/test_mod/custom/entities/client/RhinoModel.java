@@ -1,4 +1,4 @@
-package fr.silenthill99.test_mod.init.entities.client;
+package fr.silenthill99.test_mod.custom.entities.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

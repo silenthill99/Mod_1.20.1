@@ -1,4 +1,4 @@
-package fr.silenthill99.test_mod.init.blocks;
+package fr.silenthill99.test_mod.custom.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

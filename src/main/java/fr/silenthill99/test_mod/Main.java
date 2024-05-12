@@ -4,7 +4,7 @@ import com.mojang.logging.LogUtils;
 import fr.silenthill99.test_mod.init.ModBlocks;
 import fr.silenthill99.test_mod.init.ModEntityTypes;
 import fr.silenthill99.test_mod.init.ModItems;
-import fr.silenthill99.test_mod.init.entities.client.RhinoRenderer;
+import fr.silenthill99.test_mod.custom.entities.client.RhinoRenderer;
 import fr.silenthill99.test_mod.utils.ModItemGroup;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;

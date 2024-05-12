@@ -1,7 +1,7 @@
 package fr.silenthill99.test_mod.init;
 
 import fr.silenthill99.test_mod.Main;
-import fr.silenthill99.test_mod.init.entities.custom.RhinoEntity;
+import fr.silenthill99.test_mod.custom.entities.custom.RhinoEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;

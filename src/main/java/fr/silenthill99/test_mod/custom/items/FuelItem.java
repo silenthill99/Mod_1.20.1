@@ -1,4 +1,4 @@
-package fr.silenthill99.test_mod.init.items;
+package fr.silenthill99.test_mod.custom.items;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

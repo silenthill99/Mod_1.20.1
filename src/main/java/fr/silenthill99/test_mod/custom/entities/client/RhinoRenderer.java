@@ -1,8 +1,8 @@
-package fr.silenthill99.test_mod.init.entities.client;
+package fr.silenthill99.test_mod.custom.entities.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import fr.silenthill99.test_mod.Main;
-import fr.silenthill99.test_mod.init.entities.custom.RhinoEntity;
+import fr.silenthill99.test_mod.custom.entities.custom.RhinoEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

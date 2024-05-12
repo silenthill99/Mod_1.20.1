@@ -1,7 +1,7 @@
 package fr.silenthill99.test_mod.init;
 
 import fr.silenthill99.test_mod.Main;
-import fr.silenthill99.test_mod.init.blocks.SoundBlock;
+import fr.silenthill99.test_mod.custom.blocks.SoundBlock;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
