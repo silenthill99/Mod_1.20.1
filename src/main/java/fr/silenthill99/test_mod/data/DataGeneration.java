@@ -5,6 +5,8 @@ import fr.silenthill99.test_mod.data.loots.ModLootTableProvider;
 import fr.silenthill99.test_mod.data.models_and_blockstates.ModBlockStateProvider;
 import fr.silenthill99.test_mod.data.models_and_blockstates.ModItemModelsProvider;
 import fr.silenthill99.test_mod.data.recipes.RecipeGenerator;
+import fr.silenthill99.test_mod.data.tags.ModBlockTagGenerator;
+import fr.silenthill99.test_mod.data.tags.ModItemTagGenerator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -16,8 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = Main.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class
-DataGeneration
+public class DataGeneration
 {
     @SubscribeEvent
     public static void gatherData(final GatherDataEvent event)
