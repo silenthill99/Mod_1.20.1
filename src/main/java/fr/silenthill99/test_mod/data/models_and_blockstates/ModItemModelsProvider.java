@@ -7,13 +7,16 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelsProvider extends ItemModelProvider {
+
+    private String path;
+
     public ModItemModelsProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Main.MODID, existingFileHelper);
     }
@@ -37,22 +40,30 @@ public class ModItemModelsProvider extends ItemModelProvider {
         toolItem(ModItems.SAPPHIRE_PICKAXE.get());
         toolItem(ModItems.SAPPHIRE_SHOVEL.get());
         toolItem(ModItems.SAPPHIRE_SWORD.get());
+
+        spawnEggItem((ForgeSpawnEggItem) ModItems.RHINO_SPAWN_EGG.get());
     }
 
-    public ItemModelBuilder simpleItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(),
+    public void simpleItem(RegistryObject<Item> item) {
+        withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Main.MODID, "item/" + item.getId().getPath()));
     }
 
     private void toolItem(Item item) {
-        withExistingParent(ForgeRegistries.ITEMS.getKey(item).getPath(), mcLoc("item/handheld"))
-                .texture("layer0", modLoc("item/" + ForgeRegistries.ITEMS.getKey(item).getPath()));
+        path = ForgeRegistries.ITEMS.getKey(item).getPath();
+        withExistingParent(path, mcLoc("item/handheld"))
+                .texture("layer0", modLoc("item/" + path));
     }
 
-    public ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(),
+    public void simpleBlockItem(RegistryObject<Block> item) {
+        withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Main.MODID, "item/" + item.getId().getPath()));
+    }
+
+    public void spawnEggItem(ForgeSpawnEggItem item) {
+        path = ForgeRegistries.ITEMS.getKey(item).getPath();
+        withExistingParent(path, mcLoc("item/template_spawn_egg"));
     }
 }

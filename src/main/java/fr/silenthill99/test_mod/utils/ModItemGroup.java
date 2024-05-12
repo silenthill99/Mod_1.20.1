@@ -52,6 +52,8 @@ public class ModItemGroup
                 pOutput.accept(ModItems.SAPPHIRE_CHESTPLATE.get());
                 pOutput.accept(ModItems.SAPPHIRE_LEGGINGS.get());
                 pOutput.accept(ModItems.SAPPHIRE_BOOTS.get());
+
+                pOutput.accept(ModItems.RHINO_SPAWN_EGG.get());
             })
             .build());
 }
