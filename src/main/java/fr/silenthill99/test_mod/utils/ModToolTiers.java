@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.function.Supplier;
 
+@SuppressWarnings("unused")
 public enum ModToolTiers implements Tier {
     SAPPHIRE("sapphire", 5, 1500, 5f, 4, 25,
             ModTags.Blocks.NEEDS_SAPPHIRE_TOOLS, () -> Ingredient.of(ModItems.SAPPHIRE.get()), List.of(Tiers.NETHERITE),
@@ -83,17 +84,14 @@ public enum ModToolTiers implements Tier {
         return tag;
     }
 
-    @SuppressWarnings("unused")
     public String getTitle() {
         return name;
     }
 
-    @SuppressWarnings("unused")
     public List<Object> getAfter() {
         return after;
     }
 
-    @SuppressWarnings("unused")
     public List<Object> getBefore() {
         return before;
     }
