@@ -2,7 +2,6 @@ package fr.silenthill99.test_mod.utils;
 
 import fr.silenthill99.test_mod.Main;
 import fr.silenthill99.test_mod.init.ModItems;
-import fr.silenthill99.test_mod.utils.ModTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
