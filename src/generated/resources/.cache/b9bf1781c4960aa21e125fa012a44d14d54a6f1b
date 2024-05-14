@@ -1,0 +1,5 @@
+// 1.20.1	2024-05-14T17:15:21.7824136	Global Loot Modifiers : test_mod
+b3afe336f731a806e57efc48bad94629bb71e8b2 data/forge/loot_modifiers/global_loot_modifiers.json
+f755de554cbb7485337d39bc3fc8ff0012734729 data/test_mod/loot_modifiers/metal_detector_from_jungle_temples.json
+12682c090aebe23993813f091f6b689e518d2ddd data/test_mod/loot_modifiers/pinne_cone_from_creeper.json
+b12d1e94dedd19016e40a5b305f84f6692c6cd61 data/test_mod/loot_modifiers/pinne_cone_from_grass.json

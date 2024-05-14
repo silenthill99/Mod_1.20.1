@@ -1,6 +1,7 @@
 package fr.silenthill99.test_mod.data;
 
 import fr.silenthill99.test_mod.Main;
+import fr.silenthill99.test_mod.data.loots.ModGlobalLootModifiersProvider;
 import fr.silenthill99.test_mod.data.loots.ModLootTableProvider;
 import fr.silenthill99.test_mod.data.models_and_blockstates.ModBlockStateProvider;
 import fr.silenthill99.test_mod.data.models_and_blockstates.ModItemModelsProvider;
@@ -34,7 +35,10 @@ public class DataGeneration
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelsProvider(packOutput, existingFileHelper));
 
-        ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(), new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+        ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
+                new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider,
+                blockTagGenerator.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
     }
 }

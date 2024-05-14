@@ -1,10 +1,10 @@
 package fr.silenthill99.test_mod;
 
-import com.mojang.logging.LogUtils;
 import fr.silenthill99.test_mod.init.ModBlocks;
 import fr.silenthill99.test_mod.init.ModEntityTypes;
 import fr.silenthill99.test_mod.init.ModItems;
 import fr.silenthill99.test_mod.custom.entities.client.RhinoRenderer;
+import fr.silenthill99.test_mod.loot.ModLootModifier;
 import fr.silenthill99.test_mod.utils.ModItemGroup;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -17,7 +17,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Main.MODID)
@@ -25,8 +24,6 @@ public class Main
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "test_mod";
-    // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public Main()
     {
@@ -39,6 +36,7 @@ public class Main
         ModBlocks.BLOCKS.register(modEventBus);
         ModItemGroup.CREATIVE_MODE_TAB.register(modEventBus);
         ModEntityTypes.ENTITIES.register(modEventBus);
+        ModLootModifier.LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         
