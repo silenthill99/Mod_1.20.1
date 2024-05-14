@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "0": {
+      "item": "test_mod:sapphire"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "000",
+    " 1 ",
+    " 1 "
+  ],
+  "result": {
+    "item": "test_mod:sapphire_pickaxe"
+  },
+  "show_notification": true
+}
