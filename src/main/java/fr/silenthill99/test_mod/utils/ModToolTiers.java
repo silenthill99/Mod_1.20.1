@@ -44,8 +44,8 @@ public enum ModToolTiers implements Tier {
         this.repairIngredient = repairIngredient;
         this.after = after;
         this.before = before;
-        TierSortingRegistry.registerTier(new ForgeTier(level, uses, speed, attackDamageBonus,
-                enchantmentValue, tag, repairIngredient), new ResourceLocation(Main.MODID, name), after, before);
+        TierSortingRegistry.registerTier(new ForgeTier(level, uses, speed, attackDamageBonus, enchantmentValue, tag,
+                repairIngredient), new ResourceLocation(Main.MODID, name), after, before);
     }
 
     @Override
