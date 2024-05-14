@@ -54,6 +54,6 @@ public class ModItemGroup
                 pOutput.accept(ModItems.SAPPHIRE_BOOTS.get());
 
                 pOutput.accept(ModItems.RHINO_SPAWN_EGG.get());
-            })
+            }).backgroundSuffix("item_search.png").withSearchBar()
             .build());
 }
