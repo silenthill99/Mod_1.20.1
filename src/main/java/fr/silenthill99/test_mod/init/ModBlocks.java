@@ -39,7 +39,7 @@ public class ModBlocks
                     .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
-            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noLootTable()));
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> MODEL_BLOCK = registerBlock("model_block",
             () -> new Block(BlockBehaviour.Properties.of().noOcclusion()));

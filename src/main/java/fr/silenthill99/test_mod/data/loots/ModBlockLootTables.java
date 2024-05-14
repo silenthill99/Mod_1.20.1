@@ -53,6 +53,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         add(ModBlocks.SAPPHIRE_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SAPPHIRE_DOOR.get()));
         dropSelf(ModBlocks.SAPPHIRE_TRAPDOOR.get());
+        dropSelf(ModBlocks.SOUND_BLOCK.get());
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {
