@@ -72,6 +72,6 @@ public class ModArmorItem extends ArmorItem {
         ItemStack leggings = player.getInventory().getArmor(1);
         ItemStack chestplate = player.getInventory().getArmor(2);
         ItemStack helmet = player.getInventory().getArmor(3);
-        return !boots.isEmpty() && !leggings.isEmpty() && chestplate.isEmpty() && helmet.isEmpty();
+        return !boots.isEmpty() && !leggings.isEmpty() && !chestplate.isEmpty() && !helmet.isEmpty();
     }
 }
