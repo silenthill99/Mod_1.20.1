@@ -83,14 +83,17 @@ public enum ModToolTiers implements Tier {
         return tag;
     }
 
+    @SuppressWarnings("unused")
     public String getTitle() {
         return name;
     }
 
+    @SuppressWarnings("unused")
     public List<Object> getAfter() {
         return after;
     }
 
+    @SuppressWarnings("unused")
     public List<Object> getBefore() {
         return before;
     }
