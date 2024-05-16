@@ -1,7 +1,9 @@
 package fr.silenthill99.test_mod.data.loots.blocks;
 
+import fr.silenthill99.test_mod.custom.blocks.StrawberryCropBlock;
 import fr.silenthill99.test_mod.init.ModBlocks;
 import fr.silenthill99.test_mod.init.ModItems;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -11,6 +13,8 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
@@ -52,6 +56,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createDoorTable(ModBlocks.SAPPHIRE_DOOR.get()));
         dropSelf(ModBlocks.SAPPHIRE_TRAPDOOR.get());
         dropSelf(ModBlocks.SOUND_BLOCK.get());
+
+        LootItemCondition.Builder condition1 = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCropBlock.AGE, 5));
+        add(ModBlocks.STRAWBERRY_CROP.get(), block -> createCropDrops(block, ModItems.STRAWBERRY.get(),
+                ModItems.STRAWBERRY_SEEDS.get(), condition1));
+
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

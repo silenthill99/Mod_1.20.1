@@ -1,15 +1,20 @@
 package fr.silenthill99.test_mod.data.models_and_blockstates;
 
 import fr.silenthill99.test_mod.Main;
+import fr.silenthill99.test_mod.custom.blocks.StrawberryCropBlock;
 import fr.silenthill99.test_mod.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -42,6 +47,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType((DoorBlock) ModBlocks.SAPPHIRE_DOOR.get(), modLoc("block/sapphire_door_bottom"), modLoc("block/sapphire_door_top"), "cutout");
         trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.SAPPHIRE_TRAPDOOR.get(), modLoc("block/sapphire_trapdoor"), true, "cutout");
 
+        makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
@@ -100,5 +106,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         super.fenceGateBlock(block, texture);
         simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" +
                 ForgeRegistries.BLOCKS.getKey(block).getPath())));
+    }
+
+    public void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] strawberryStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()),
+                new ResourceLocation(Main.MODID, "block/" + textureName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
     }
 }

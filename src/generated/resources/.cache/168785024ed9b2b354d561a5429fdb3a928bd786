@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-12T12:00:18.4435435	Block States: test_mod
+// 1.20.1	2024-05-16T21:19:12.7572898	Block States: test_mod
 c82e05f04a8e3bb8ab43bea456125bb615632de5 assets/test_mod/blockstates/deepslate_sapphire_ore.json
 73afb78a7d5fdc6ad3a2e308f46f9d186b329912 assets/test_mod/blockstates/end_stone_sapphire_ore.json
 1ff77dd249c1d966ebb5392e901574e8a05657f7 assets/test_mod/blockstates/model_block.json
@@ -16,6 +16,7 @@ fcd187b9d42b98f06707cf482edb259bc16d53f7 assets/test_mod/blockstates/sapphire_st
 4bce246917f27ed1b88f8553592858ce9dc3dddd assets/test_mod/blockstates/sapphire_trapdoor.json
 0d149e41e18ff663be5b0a3751a73e241965180d assets/test_mod/blockstates/sapphire_wall.json
 e8f1fd2d296634d6ec1aead54bc643a824f0454c assets/test_mod/blockstates/sound_block.json
+8f3b1c375e310f5f9942e44eec678fed2361099b assets/test_mod/blockstates/strawberry_crop.json
 4c42fecab81e2124d60d8af3d6c2f7b0e1a32607 assets/test_mod/models/block/deepslate_sapphire_ore.json
 86c2efcebb71a126b43a5db01313173705992b69 assets/test_mod/models/block/end_stone_sapphire_ore.json
 908bae4a00aaf1b480d4608cf6296a8f83b8ed2e assets/test_mod/models/block/model_block.json
@@ -56,6 +57,12 @@ d932fb38f22d897a16acbb9614e819a75ff8f71b assets/test_mod/models/block/sapphire_w
 d86546c773c38e97a144b3fa156f6ff37e37baf6 assets/test_mod/models/block/sapphire_wall_side.json
 9cefa2b641da0bca1116e80763b9684abf7efab4 assets/test_mod/models/block/sapphire_wall_side_tall.json
 ac88ec2ec233109a708f4305a33b01c31d853461 assets/test_mod/models/block/sound_block.json
+99c79094f83e9cc79058c202d7b155d4b3a87b9e assets/test_mod/models/block/strawberry_stage0.json
+4ab9d6f871dba795aed565665d0143849b676018 assets/test_mod/models/block/strawberry_stage1.json
+a0fc3edb87852323a727df8b8ba6560570b51634 assets/test_mod/models/block/strawberry_stage2.json
+f9c5d35c470d27cf8551e63b802114985aae318c assets/test_mod/models/block/strawberry_stage3.json
+282dde4db1a0c774d2358a6689b2bde0afe07e15 assets/test_mod/models/block/strawberry_stage4.json
+97c00b2d52e9038b6cb8b241f75d2310407eed98 assets/test_mod/models/block/strawberry_stage5.json
 e041cbb8ac0f73f0d93de12d51751ed5a0889392 assets/test_mod/models/item/deepslate_sapphire_ore.json
 6a1ff70e5c93def4470e60be009f29bb25010823 assets/test_mod/models/item/end_stone_sapphire_ore.json
 18e3a0396543fb3f62ccc10ccea26ba29505b96c assets/test_mod/models/item/model_block.json

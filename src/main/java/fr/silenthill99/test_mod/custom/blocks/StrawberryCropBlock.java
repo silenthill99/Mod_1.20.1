@@ -1,5 +1,6 @@
 package fr.silenthill99.test_mod.custom.blocks;
 
+import fr.silenthill99.test_mod.init.ModItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
@@ -19,11 +20,12 @@ public class StrawberryCropBlock extends CropBlock {
 
     @Override
     protected @NotNull ItemLike getBaseSeedId() {
-        return super.getBaseSeedId();
+        return ModItems.STRAWBERRY_SEEDS.get();
     }
 
     @Override
-    protected @NotNull IntegerProperty getAgeProperty() {
+    @NotNull
+    public IntegerProperty getAgeProperty() {
         return AGE;
     }
 
@@ -31,6 +33,8 @@ public class StrawberryCropBlock extends CropBlock {
     public int getMaxAge() {
         return MAX_AGE;
     }
+
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> pBuilder) {

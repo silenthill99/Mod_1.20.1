@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-14T11:56:52.4308992	Loot Tables
+// 1.20.1	2024-05-16T21:27:59.114115	Loot Tables
 ab4cba85aa1d8420c1f763d7c3846c2040fe5188 data/test_mod/loot_tables/blocks/deepslate_sapphire_ore.json
 b3b940a4019386fd10afa3271e21c6c688faff3c data/test_mod/loot_tables/blocks/end_stone_sapphire_ore.json
 683a466234d94093ae846f3f13b2b9074cf566c1 data/test_mod/loot_tables/blocks/model_block.json
@@ -16,3 +16,4 @@ da816a4cf91a625f5f234790ae28f43c43f933b7 data/test_mod/loot_tables/blocks/sapphi
 f3f43524c8ac5e69453aa741a9a952551d9e15d8 data/test_mod/loot_tables/blocks/sapphire_trapdoor.json
 e9bc6bfbc9ee9b3e5ff133e5d011f7f53eeb84dd data/test_mod/loot_tables/blocks/sapphire_wall.json
 1ee920f0d6341edee25b32567937240e90f52788 data/test_mod/loot_tables/blocks/sound_block.json
+0eeb36c4410c2b3e41e12cae24db8fc728d19ff6 data/test_mod/loot_tables/blocks/strawberry_crop.json

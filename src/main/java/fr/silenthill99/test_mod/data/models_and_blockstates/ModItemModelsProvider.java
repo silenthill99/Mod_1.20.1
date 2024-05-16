@@ -64,6 +64,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         toolItem(ModItems.SAPPHIRE_SWORD.get());
 
         spawnEggItem((ForgeSpawnEggItem) ModItems.RHINO_SPAWN_EGG.get());
+
+        simpleItem(ModItems.STRAWBERRY_SEEDS);
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

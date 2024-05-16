@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-14T14:12:01.0360271	Item Models: test_mod
+// 1.20.1	2024-05-16T21:19:12.764559	Item Models: test_mod
 e6e9161800e117c2b7fb1424d498a63ea1182c35 assets/test_mod/models/item/metal_detector.json
 f4231ef41bc6dbdfdfcac0e2c645e0bd2b537383 assets/test_mod/models/item/pine_cone.json
 3c7c81930891b415544d189465c4299935cb4f42 assets/test_mod/models/item/raw_sapphire.json
@@ -55,3 +55,4 @@ a7c863b24e73f98c63d63ac30f7147640b576db6 assets/test_mod/models/item/sapphire_pi
 868fff012acc8ae9e6a7f6d3fbb71f6d80b4e3d1 assets/test_mod/models/item/sapphire_shovel.json
 d725cf8027257b7270401949a173128e9c458ba1 assets/test_mod/models/item/sapphire_sword.json
 ec1ba5c212808bcee5a1afd4662b9a3b24ee751a assets/test_mod/models/item/strawberry.json
+c8d73f7a5ee4227836aa72917105ae2cdae46846 assets/test_mod/models/item/strawberry_seeds.json

@@ -2,6 +2,7 @@ package fr.silenthill99.test_mod.init;
 
 import fr.silenthill99.test_mod.Main;
 import fr.silenthill99.test_mod.custom.blocks.SoundBlock;
+import fr.silenthill99.test_mod.custom.blocks.StrawberryCropBlock;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -46,7 +47,7 @@ public class ModBlocks
 
     // Portes, Boutons, escaliers, etc.
     public static final RegistryObject<Block> SAPPHIRE_STAIRS = registerBlock("sapphire_stairs",
-            () -> new StairBlock(ModBlocks.SAPPHIRE_BLOCK.get().defaultBlockState(),
+            () -> new StairBlock(() -> ModBlocks.SAPPHIRE_BLOCK.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
     public static final RegistryObject<Block> SAPPHIRE_SLABS = registerBlock("sapphire_slabs",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
@@ -73,14 +74,17 @@ public class ModBlocks
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)
                     .noOcclusion(), BlockSetType.IRON));
 
+    public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+            () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block)
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block)
     {
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 }
