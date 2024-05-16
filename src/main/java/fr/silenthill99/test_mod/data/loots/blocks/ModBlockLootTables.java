@@ -1,4 +1,4 @@
-package fr.silenthill99.test_mod.data.loots;
+package fr.silenthill99.test_mod.data.loots.blocks;
 
 import fr.silenthill99.test_mod.init.ModBlocks;
 import fr.silenthill99.test_mod.init.ModItems;

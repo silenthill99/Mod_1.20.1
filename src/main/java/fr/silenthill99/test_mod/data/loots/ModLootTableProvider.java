@@ -1,6 +1,6 @@
 package fr.silenthill99.test_mod.data.loots;
 
-import fr.silenthill99.test_mod.data.loots.ModBlockLootTables;
+import fr.silenthill99.test_mod.data.loots.blocks.ModBlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;

@@ -1,5 +1,6 @@
 {
   "entries": [
+    "test_mod:metal_detector_from_suspicious_sand",
     "test_mod:metal_detector_from_jungle_temples",
     "test_mod:pinne_cone_from_grass",
     "test_mod:pinne_cone_from_creeper"
