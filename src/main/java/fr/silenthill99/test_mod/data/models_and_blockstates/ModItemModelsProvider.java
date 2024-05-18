@@ -66,6 +66,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         spawnEggItem((ForgeSpawnEggItem) ModItems.RHINO_SPAWN_EGG.get());
 
         simpleItem(ModItems.STRAWBERRY_SEEDS);
+        simpleItem(ModItems.CORN_SEEDS);
+        simpleItem(ModItems.CORN);
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

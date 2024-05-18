@@ -56,6 +56,8 @@ public class ModItemGroup
                 pOutput.accept(ModItems.RHINO_SPAWN_EGG.get());
 
                 pOutput.accept(ModItems.STRAWBERRY_SEEDS.get());
+                pOutput.accept(ModItems.CORN_SEEDS.get());
+                pOutput.accept(ModItems.CORN.get());
             }).backgroundSuffix("item_search.png").withSearchBar()
             .build());
 }

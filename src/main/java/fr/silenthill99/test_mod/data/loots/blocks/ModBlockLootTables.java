@@ -1,5 +1,6 @@
 package fr.silenthill99.test_mod.data.loots.blocks;
 
+import fr.silenthill99.test_mod.custom.blocks.CornCropBlock;
 import fr.silenthill99.test_mod.custom.blocks.StrawberryCropBlock;
 import fr.silenthill99.test_mod.init.ModBlocks;
 import fr.silenthill99.test_mod.init.ModItems;
@@ -62,6 +63,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCropBlock.AGE, 5));
         add(ModBlocks.STRAWBERRY_CROP.get(), block -> createCropDrops(block, ModItems.STRAWBERRY.get(),
                 ModItems.STRAWBERRY_SEEDS.get(), condition1));
+
+        LootItemCondition.Builder condition2 = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 7))
+                .or(LootItemBlockStatePropertyCondition
+                        .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8)));
+        add(ModBlocks.CORN_CROP.get(), block -> createCropDrops(block, ModItems.CORN.get(),
+                ModItems.CORN_SEEDS.get(), condition2));
 
     }
 

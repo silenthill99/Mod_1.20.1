@@ -6,6 +6,7 @@ import fr.silenthill99.test_mod.custom.items.MetalDetectorItem;
 import fr.silenthill99.test_mod.custom.items.ModArmorItem;
 import fr.silenthill99.test_mod.utils.ModArmorMaterials;
 import fr.silenthill99.test_mod.utils.ModToolTiers;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -52,6 +53,14 @@ public class ModItems
 
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
             () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CORN_SEEDS = ITEMS.register("corn_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.CORN_CROP.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CORN = ITEMS.register("corn",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationMod(2f)
+                    .alwaysEat()
+                    .build())));
 
     public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.RHINO, 0x7e9680, 0xc5d1c5,

@@ -1,6 +1,7 @@
 package fr.silenthill99.test_mod.init;
 
 import fr.silenthill99.test_mod.Main;
+import fr.silenthill99.test_mod.custom.blocks.CornCropBlock;
 import fr.silenthill99.test_mod.custom.blocks.SoundBlock;
 import fr.silenthill99.test_mod.custom.blocks.StrawberryCropBlock;
 import net.minecraft.sounds.SoundEvents;
@@ -76,6 +77,9 @@ public class ModBlocks
 
     public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
             () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> CORN_CROP = BLOCKS.register("corn_crop",
+            () -> new CornCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {
