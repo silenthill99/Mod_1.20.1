@@ -18,6 +18,9 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
+
+    private String path;
+
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Main.MODID, exFileHelper);
     }
@@ -50,6 +53,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
         makeCornCrop((CropBlock) ModBlocks.CORN_CROP.get(), "corn_stage_", "corn_stage_");
+
+        flowerBlock(ModBlocks.CATMINT.get());
+        flowerPotBlock(ModBlocks.POTTED_CATMINT.get(), ModBlocks.CATMINT.get());
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
@@ -59,7 +65,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     public void fenceBlock(FenceBlock block, ResourceLocation texture) {
         super.fenceBlock(block, texture);
-        simpleBlockItem(block, models().fenceInventory(ForgeRegistries.BLOCKS.getKey(block).getPath() +
+        path = ForgeRegistries.BLOCKS.getKey(block).getPath();
+        simpleBlockItem(block, models().fenceInventory(path +
                 "_inventory", texture));
     }
 
@@ -136,5 +143,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ResourceLocation(Main.MODID, "block/" + textureName + state.getValue(((CornCropBlock) block).getAgeProperty()))).renderType("cutout"));
 
         return models;
+    }
+
+    private void flowerBlock(Block block) {
+        path = ForgeRegistries.BLOCKS.getKey(block).getPath();
+        simpleBlockWithItem(block, models().cross(path, blockTexture(block)).renderType("cutout"));
+    }
+
+    private void flowerPotBlock(Block block, Block block2) {
+        path = ForgeRegistries.BLOCKS.getKey(block).getPath();
+        simpleBlockWithItem(block, models().singleTexture(path, mcLoc("flower_pot_cross"), "plant",
+                blockTexture(block2)).renderType("cutout"));
     }
 }

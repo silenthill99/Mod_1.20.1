@@ -8,6 +8,8 @@ import fr.silenthill99.test_mod.loot.ModLootModifier;
 import fr.silenthill99.test_mod.utils.ModItemGroup;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -44,17 +46,12 @@ public class Main
 
     private void commonSetup(FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(() -> ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(),
+                ModBlocks.POTTED_CATMINT));
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-//        Pour ajouter des éléments dans des Creative tab vanilla
-//        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-//        {
-//            event.accept(ModItems.SAPPHIRE);
-//            event.accept(ModItems.RAW_SAPPHIRE);
-//        }
         if (event.getTabKey() == CreativeModeTabs.COMBAT)
         {
             event.accept(ModItems.SAPPHIRE_SWORD);

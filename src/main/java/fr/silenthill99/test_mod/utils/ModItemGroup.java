@@ -58,6 +58,8 @@ public class ModItemGroup
                 pOutput.accept(ModItems.STRAWBERRY_SEEDS.get());
                 pOutput.accept(ModItems.CORN_SEEDS.get());
                 pOutput.accept(ModItems.CORN.get());
+
+                pOutput.accept(ModBlocks.CATMINT.get());
             }).backgroundSuffix("item_search.png").withSearchBar()
             .build());
 }

@@ -72,7 +72,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8)));
         add(ModBlocks.CORN_CROP.get(), block -> createCropDrops(block, ModItems.CORN.get(),
                 ModItems.CORN_SEEDS.get(), condition2));
-
+        dropSelf(ModBlocks.CATMINT.get());
+        add(ModBlocks.POTTED_CATMINT.get(), block -> createPotFlowerItemTable(ModBlocks.CATMINT.get()));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {
