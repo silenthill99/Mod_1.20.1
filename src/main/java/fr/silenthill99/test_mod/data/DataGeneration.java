@@ -8,6 +8,7 @@ import fr.silenthill99.test_mod.data.models_and_blockstates.ModItemModelsProvide
 import fr.silenthill99.test_mod.data.recipes.RecipeGenerator;
 import fr.silenthill99.test_mod.data.tags.ModBlockTagGenerator;
 import fr.silenthill99.test_mod.data.tags.ModItemTagGenerator;
+import fr.silenthill99.test_mod.data.tags.ModPoiTypeTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -29,16 +30,20 @@ public class DataGeneration
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new RecipeGenerator(packOutput));
-        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+        boolean client = event.includeClient();
+        boolean server = event.includeServer();
 
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModItemModelsProvider(packOutput, existingFileHelper));
+        generator.addProvider(server, new RecipeGenerator(packOutput));
+        generator.addProvider(server, ModLootTableProvider.create(packOutput));
 
-        ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
+        generator.addProvider(client, new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(client, new ModItemModelsProvider(packOutput, existingFileHelper));
+
+        ModBlockTagGenerator blockTagGenerator = generator.addProvider(server,
                 new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider,
+        generator.addProvider(server, new ModItemTagGenerator(packOutput, lookupProvider,
                 blockTagGenerator.contentsGetter(), existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
+        generator.addProvider(server, new ModGlobalLootModifiersProvider(packOutput));
+        generator.addProvider(server, new ModPoiTypeTagsProvider(packOutput, lookupProvider, existingFileHelper));
     }
 }

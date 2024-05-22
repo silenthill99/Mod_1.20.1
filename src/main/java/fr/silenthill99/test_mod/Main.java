@@ -6,6 +6,7 @@ import fr.silenthill99.test_mod.init.ModItems;
 import fr.silenthill99.test_mod.custom.entities.client.RhinoRenderer;
 import fr.silenthill99.test_mod.loot.ModLootModifier;
 import fr.silenthill99.test_mod.utils.ModItemGroup;
+import fr.silenthill99.test_mod.villagers.ModVillagers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -39,6 +40,8 @@ public class Main
         ModItemGroup.CREATIVE_MODE_TAB.register(modEventBus);
         ModEntityTypes.ENTITIES.register(modEventBus);
         ModLootModifier.LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
+        ModVillagers.POI_TYPES.register(modEventBus);
+        ModVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         

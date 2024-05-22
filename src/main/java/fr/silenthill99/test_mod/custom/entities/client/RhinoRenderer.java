@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class RhinoRenderer extends MobRenderer<RhinoEntity, RhinoModel<RhinoEntity>> {
     public RhinoRenderer(EntityRendererProvider.Context pContext) {
@@ -14,18 +15,18 @@ public class RhinoRenderer extends MobRenderer<RhinoEntity, RhinoModel<RhinoEnti
     }
 
     @Override
-    public ResourceLocation getTextureLocation(RhinoEntity p_114482_) {
-        return new ResourceLocation(Main.MODID, "textures/entities/rhino.png");
+    public @NotNull ResourceLocation getTextureLocation(@NotNull RhinoEntity rhinoEntity) {
+        return new ResourceLocation(Main.MODID, "textures/entity/rhino.png");
     }
 
     @Override
-    public void render(RhinoEntity p_115455_, float p_115456_, float p_115457_, PoseStack p_115458_,
-                       MultiBufferSource p_115459_, int p_115460_) {
+    public void render(RhinoEntity pEntity, float pEntityYaw, float pPartialTicks, @NotNull PoseStack pPoseStack,
+                       @NotNull MultiBufferSource pBuffer, int pPackedLight) {
 
-        if (p_115455_.isBaby()) {
-            p_115458_.scale(0.5f, 0.5f, 0.5f);
+        if (pEntity.isBaby()) {
+            pPoseStack.scale(0.5f, 0.5f, 0.5f);
         }
 
-        super.render(p_115455_, p_115456_, p_115457_, p_115458_, p_115459_, p_115460_);
+        super.render(pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
     }
 }
