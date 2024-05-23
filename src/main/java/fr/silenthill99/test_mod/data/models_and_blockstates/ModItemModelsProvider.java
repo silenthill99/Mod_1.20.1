@@ -23,7 +23,7 @@ import java.util.LinkedHashMap;
 
 public class ModItemModelsProvider extends ItemModelProvider {
 
-    private String path;
+    private ResourceLocation path;
     private static final LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
         trimMaterials.put(TrimMaterials.QUARTZ, 0.1F);
@@ -123,9 +123,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
     }
 
     private void toolItem(Item item) {
-        path = ForgeRegistries.ITEMS.getKey(item).getPath();
-        withExistingParent(path, mcLoc("item/handheld"))
-                .texture("layer0", modLoc("item/" + path));
+        path = ForgeRegistries.ITEMS.getKey(item);
+        if (path != null) {
+            withExistingParent(path.getPath(), mcLoc("item/handheld"))
+                    .texture("layer0", modLoc("item/" + path.getPath()));
+        }
     }
 
     public void simpleBlockItem(RegistryObject<Block> item) {
@@ -135,7 +137,9 @@ public class ModItemModelsProvider extends ItemModelProvider {
     }
 
     public void spawnEggItem(ForgeSpawnEggItem item) {
-        path = ForgeRegistries.ITEMS.getKey(item).getPath();
-        withExistingParent(path, mcLoc("item/template_spawn_egg"));
+        path = ForgeRegistries.ITEMS.getKey(item);
+        if (path != null) {
+            withExistingParent(path.getPath(), mcLoc("item/template_spawn_egg"));
+        }
     }
 }

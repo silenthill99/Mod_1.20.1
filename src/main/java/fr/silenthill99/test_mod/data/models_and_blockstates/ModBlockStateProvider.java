@@ -19,7 +19,7 @@ import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
-    private String path;
+    private ResourceLocation path;
 
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Main.MODID, exFileHelper);
@@ -65,56 +65,58 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     public void fenceBlock(FenceBlock block, ResourceLocation texture) {
         super.fenceBlock(block, texture);
-        path = ForgeRegistries.BLOCKS.getKey(block).getPath();
-        simpleBlockItem(block, models().fenceInventory(path +
+        path = ForgeRegistries.BLOCKS.getKey(block);
+        simpleBlockItem(block, models().fenceInventory(path.getPath() +
                 "_inventory", texture));
     }
 
     @Override
     public void buttonBlock(ButtonBlock block, ResourceLocation texture) {
+        path = ForgeRegistries.BLOCKS.getKey(block);
         super.buttonBlock(block, texture);
-        simpleBlockItem(block, models().buttonInventory(ForgeRegistries.BLOCKS.getKey(block).getPath() + "_inventory",
-                texture));
+        simpleBlockItem(block, models().buttonInventory(path.getPath() + "_inventory", texture));
     }
 
     @Override
     public void wallBlock(WallBlock block, ResourceLocation texture) {
+        path = ForgeRegistries.BLOCKS.getKey(block);
         super.wallBlock(block, texture);
-        simpleBlockItem(block, models().wallInventory(ForgeRegistries.BLOCKS.getKey(block).getPath() +
-                "_inventory", texture));
+        simpleBlockItem(block, models().wallInventory(path.getPath() + "_inventory", texture));
     }
 
     @Override
     public void stairsBlock(StairBlock block, ResourceLocation texture) {
+        path = ForgeRegistries.BLOCKS.getKey(block);
         super.stairsBlock(block, texture);
-        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath())));
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + path.getPath())));
     }
 
     @Override
     public void slabBlock(SlabBlock block, ResourceLocation doubleslab, ResourceLocation texture) {
+        path = ForgeRegistries.BLOCKS.getKey(block);
         super.slabBlock(block, doubleslab, texture);
-        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" +
-                ForgeRegistries.BLOCKS.getKey(block).getPath())));
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + path.getPath())));
     }
 
     @Override
     public void trapdoorBlockWithRenderType(TrapDoorBlock block, ResourceLocation texture, boolean orientable, String renderType) {
+        path = ForgeRegistries.BLOCKS.getKey(block);
         super.trapdoorBlockWithRenderType(block, texture, orientable, renderType);
-        simpleBlockItem(block, models().trapdoorOrientableBottom(ForgeRegistries.BLOCKS.getKey(block).getPath() + "_bottom", texture));
+        simpleBlockItem(block, models().trapdoorOrientableBottom(path.getPath() + "_bottom", texture));
     }
 
     @Override
     public void pressurePlateBlock(PressurePlateBlock block, ResourceLocation texture) {
+        path = ForgeRegistries.BLOCKS.getKey(block);
         super.pressurePlateBlock(block, texture);
-        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" +
-                ForgeRegistries.BLOCKS.getKey(block).getPath())));
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + path.getPath())));
     }
 
     @Override
     public void fenceGateBlock(FenceGateBlock block, ResourceLocation texture) {
+        path = ForgeRegistries.BLOCKS.getKey(block);
         super.fenceGateBlock(block, texture);
-        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" +
-                ForgeRegistries.BLOCKS.getKey(block).getPath())));
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + path.getPath())));
     }
 
     public void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
@@ -146,13 +148,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void flowerBlock(Block block) {
-        path = ForgeRegistries.BLOCKS.getKey(block).getPath();
-        simpleBlockWithItem(block, models().cross(path, blockTexture(block)).renderType("cutout"));
+        path = ForgeRegistries.BLOCKS.getKey(block);
+        simpleBlockWithItem(block, models().cross(path.getPath(), blockTexture(block)).renderType("cutout"));
     }
 
     private void flowerPotBlock(Block block, Block block2) {
-        path = ForgeRegistries.BLOCKS.getKey(block).getPath();
-        simpleBlockWithItem(block, models().singleTexture(path, mcLoc("flower_pot_cross"), "plant",
+        path = ForgeRegistries.BLOCKS.getKey(block);
+        simpleBlockWithItem(block, models().singleTexture(path.getPath(), mcLoc("flower_pot_cross"), "plant",
                 blockTexture(block2)).renderType("cutout"));
     }
 }
