@@ -4,6 +4,7 @@ import fr.silenthill99.test_mod.Main;
 import fr.silenthill99.test_mod.custom.blocks.CornCropBlock;
 import fr.silenthill99.test_mod.custom.blocks.SoundBlock;
 import fr.silenthill99.test_mod.custom.blocks.StrawberryCropBlock;
+import fr.silenthill99.test_mod.utils.ModSoundEvents;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -42,7 +43,7 @@ public class ModBlocks
                     .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
-            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(ModSoundEvents.SOUND_BLOCK_SOUNDS)));
 
     public static final RegistryObject<Block> MODEL_BLOCK = registerBlock("model_block",
             () -> new Block(BlockBehaviour.Properties.of().noOcclusion()));

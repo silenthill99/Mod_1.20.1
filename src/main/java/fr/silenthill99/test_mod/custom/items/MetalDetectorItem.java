@@ -1,9 +1,11 @@
 package fr.silenthill99.test_mod.custom.items;
 
+import fr.silenthill99.test_mod.utils.ModSoundEvents;
 import fr.silenthill99.test_mod.utils.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -13,6 +15,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -23,7 +26,7 @@ public class MetalDetectorItem extends Item {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext context) {
+    public @NotNull InteractionResult useOn(UseOnContext context) {
         if (!context.getLevel().isClientSide) {
             BlockPos pos = context.getClickedPos();
             Player player = context.getPlayer();
@@ -33,13 +36,20 @@ public class MetalDetectorItem extends Item {
             for (int i = 0; i <= pos.getY() + 64; i++) {
                 BlockState state = context.getLevel().getBlockState(pos.below(i));
                 if (isValuableBlock(state)) {
+                    assert player != null;
                     outputValuableCoordinates(pos.below(i), player, state.getBlock());
                     foundBlock = true;
+
+                    context.getLevel().playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(),
+                            ModSoundEvents.METAL_DETECTOR_FOUND_ORE.get(), SoundSource.BLOCKS, 1, 1, 0);
+
                     break;
                 }
             }
 
-            if (!foundBlock) player.sendSystemMessage(Component.literal("No valuables found !"));
+            if (!foundBlock) if (player != null) {
+                player.sendSystemMessage(Component.literal("No valuables found !"));
+            }
         }
 
         context.getItemInHand().hurtAndBreak(1, context.getPlayer(), player -> player.broadcastBreakEvent(player.getUsedItemHand()));
@@ -48,7 +58,7 @@ public class MetalDetectorItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponent, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponent, @NotNull TooltipFlag pIsAdvanced) {
         pTooltipComponent.add(Component.translatable("tooltip.test_mod.metal_detector.tooltip"));
         super.appendHoverText(pStack, pLevel, pTooltipComponent, pIsAdvanced);
     }

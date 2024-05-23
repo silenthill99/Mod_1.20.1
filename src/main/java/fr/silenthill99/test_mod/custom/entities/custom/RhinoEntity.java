@@ -22,8 +22,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class RhinoEntity extends Animal {
-    public RhinoEntity(EntityType<? extends Animal> p_27557_, Level p_27558_) {
-        super(p_27557_, p_27558_);
+
+    public RhinoEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
     }
 
     public final AnimationState idleAnimationState = new AnimationState();
@@ -88,8 +89,8 @@ public class RhinoEntity extends Animal {
     }
 
     @Override
-    public boolean isFood(ItemStack p_27600_) {
-        return p_27600_.is(Items.COOKED_BEEF);
+    public boolean isFood(ItemStack pStack) {
+        return pStack.is(Items.COOKED_BEEF);
     }
 
     @Nullable
