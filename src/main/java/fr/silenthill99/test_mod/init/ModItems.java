@@ -5,6 +5,7 @@ import fr.silenthill99.test_mod.custom.items.FuelItem;
 import fr.silenthill99.test_mod.custom.items.MetalDetectorItem;
 import fr.silenthill99.test_mod.custom.items.ModArmorItem;
 import fr.silenthill99.test_mod.utils.ModArmorMaterials;
+import fr.silenthill99.test_mod.utils.ModSoundEvents;
 import fr.silenthill99.test_mod.utils.ModToolTiers;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -61,6 +62,10 @@ public class ModItems
                     .saturationMod(2f)
                     .alwaysEat()
                     .build())));
+
+    public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
+            () -> new RecordItem(6, ModSoundEvents.BAR_BRAWL,
+                    new Item.Properties().stacksTo(1), 2440));
 
     public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.RHINO, 0x7e9680, 0xc5d1c5,

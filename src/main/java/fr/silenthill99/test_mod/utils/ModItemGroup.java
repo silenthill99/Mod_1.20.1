@@ -60,6 +60,7 @@ public class ModItemGroup
                 pOutput.accept(ModItems.CORN.get());
 
                 pOutput.accept(ModBlocks.CATMINT.get());
+                pOutput.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
             }).backgroundSuffix("item_search.png").withSearchBar()
             .build());
 }

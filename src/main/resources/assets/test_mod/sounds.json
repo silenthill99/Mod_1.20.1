@@ -34,5 +34,13 @@
     "sounds": [
       "test_mod:sound_block_hit"
     ]
+  },
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "test_mod:bar_brawl",
+        "stream": true
+      }
+    ]
   }
 }

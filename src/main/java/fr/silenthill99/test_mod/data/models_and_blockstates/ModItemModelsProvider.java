@@ -68,6 +68,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         simpleItem(ModItems.STRAWBERRY_SEEDS);
         simpleItem(ModItems.CORN_SEEDS);
         simpleItem(ModItems.CORN);
+
+        simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

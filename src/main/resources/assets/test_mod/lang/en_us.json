@@ -19,6 +19,8 @@
   "creativetab.tutorial_tab": "Sapphire Tutorial Tab",
   "entity.minecraft.villager.test_mod.soundmaster": "Sound master",
   "entity.test_mod.rhino": "Rhino",
+  "item.test_mod.bar_brawl_music_disc": "§bBar Brawl Music Disc",
+  "item.test_mod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
   "item.test_mod.corn": "Corn",
   "item.test_mod.corn_seeds": "Corn seeds",
   "item.test_mod.metal_detector": "Metal Detector",
