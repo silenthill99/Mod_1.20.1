@@ -1,8 +1,9 @@
-// 1.20.1	2024-05-23T20:45:13.1113646	Block States: test_mod
+// 1.20.1	2024-05-26T19:50:36.7960048	Block States: test_mod
 099a37806027c03749a644b5ee3955a19bed7e33 assets/test_mod/blockstates/catmint.json
 2c3c430ebadaa0763095641ccf7e8f0afa7be154 assets/test_mod/blockstates/corn_crop.json
 c82e05f04a8e3bb8ab43bea456125bb615632de5 assets/test_mod/blockstates/deepslate_sapphire_ore.json
 73afb78a7d5fdc6ad3a2e308f46f9d186b329912 assets/test_mod/blockstates/end_stone_sapphire_ore.json
+bf61576a123143ab7e3cc9f33a27e76d4854f416 assets/test_mod/blockstates/gem_polishing_station.json
 1ff77dd249c1d966ebb5392e901574e8a05657f7 assets/test_mod/blockstates/model_block.json
 b0a4af5dd25f714701c779e41e86a45d78b8a8e5 assets/test_mod/blockstates/nether_sapphire_ore.json
 33eeb851a21676c9bec4cd333d93495c563b0d33 assets/test_mod/blockstates/potted_catmint.json
@@ -80,6 +81,7 @@ f9c5d35c470d27cf8551e63b802114985aae318c assets/test_mod/models/block/strawberry
 96f7d3503add7c5c5c69d268350c53273d0394f2 assets/test_mod/models/item/catmint.json
 e041cbb8ac0f73f0d93de12d51751ed5a0889392 assets/test_mod/models/item/deepslate_sapphire_ore.json
 6a1ff70e5c93def4470e60be009f29bb25010823 assets/test_mod/models/item/end_stone_sapphire_ore.json
+0003df4c2f67e7d470a2c1bf12ca3cbe36af7d13 assets/test_mod/models/item/gem_polishing_station.json
 18e3a0396543fb3f62ccc10ccea26ba29505b96c assets/test_mod/models/item/model_block.json
 5a810455c5158fd5206b6fbf20aaf4f058adae68 assets/test_mod/models/item/nether_sapphire_ore.json
 8d798307a6a3254cd484c5349486f64698c17a55 assets/test_mod/models/item/potted_catmint.json

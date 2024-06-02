@@ -2,6 +2,7 @@ package fr.silenthill99.test_mod.init;
 
 import fr.silenthill99.test_mod.Main;
 import fr.silenthill99.test_mod.custom.blocks.CornCropBlock;
+import fr.silenthill99.test_mod.custom.blocks.GemPolishingStationBlock;
 import fr.silenthill99.test_mod.custom.blocks.SoundBlock;
 import fr.silenthill99.test_mod.custom.blocks.StrawberryCropBlock;
 import fr.silenthill99.test_mod.utils.ModSoundEvents;
@@ -90,6 +91,9 @@ public class ModBlocks
     public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
             () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CATMINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+
+    public static final RegistryObject<Block> GEM_POLISHING_STATION = registerBlock("gem_polishing_station",
+            () -> new GemPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {

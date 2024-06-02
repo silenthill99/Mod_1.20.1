@@ -74,6 +74,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 ModItems.CORN_SEEDS.get(), condition2));
         dropSelf(ModBlocks.CATMINT.get());
         add(ModBlocks.POTTED_CATMINT.get(), block -> createPotFlowerItemTable(ModBlocks.CATMINT.get()));
+        dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

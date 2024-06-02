@@ -56,6 +56,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         flowerBlock(ModBlocks.CATMINT.get());
         flowerPotBlock(ModBlocks.POTTED_CATMINT.get(), ModBlocks.CATMINT.get());
+
+        simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

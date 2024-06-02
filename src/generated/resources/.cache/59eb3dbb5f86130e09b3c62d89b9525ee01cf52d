@@ -1,8 +1,9 @@
-// 1.20.1	2024-05-26T14:24:49.8382401	Loot Tables
+// 1.20.1	2024-05-26T19:46:02.1882436	Loot Tables
 50ad7d30f8c584027fe04aeb3a5457ec1c47dd8e data/test_mod/loot_tables/blocks/catmint.json
 8913e82da0ead36bf9beb90af79bc03006f9c561 data/test_mod/loot_tables/blocks/corn_crop.json
 ab4cba85aa1d8420c1f763d7c3846c2040fe5188 data/test_mod/loot_tables/blocks/deepslate_sapphire_ore.json
 b3b940a4019386fd10afa3271e21c6c688faff3c data/test_mod/loot_tables/blocks/end_stone_sapphire_ore.json
+bd2033f07b4587971315051b400cbae173f5c749 data/test_mod/loot_tables/blocks/gem_polishing_station.json
 683a466234d94093ae846f3f13b2b9074cf566c1 data/test_mod/loot_tables/blocks/model_block.json
 0f2d574b4e49d64d9f08986cdadca07febece860 data/test_mod/loot_tables/blocks/nether_sapphire_ore.json
 80cfea30f384bd8f232c4f33ce96cbe3ccd78ad8 data/test_mod/loot_tables/blocks/potted_catmint.json

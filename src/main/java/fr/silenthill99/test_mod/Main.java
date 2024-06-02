@@ -1,5 +1,6 @@
 package fr.silenthill99.test_mod;
 
+import fr.silenthill99.test_mod.init.ModBlockEntities;
 import fr.silenthill99.test_mod.init.ModBlocks;
 import fr.silenthill99.test_mod.init.ModEntityTypes;
 import fr.silenthill99.test_mod.init.ModItems;
@@ -44,6 +45,7 @@ public class Main
         ModVillagers.POI_TYPES.register(modEventBus);
         ModVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
         ModSoundEvents.SOUND_EVENTS.register(modEventBus);
+        ModBlockEntities.BLOCK_ENTITY_TYPES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         
