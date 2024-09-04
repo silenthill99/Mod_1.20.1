@@ -1,5 +1,6 @@
 package fr.silenthill99.test_mod;
 
+import fr.silenthill99.test_mod.custom.screens.GemPolishingStationScreen;
 import fr.silenthill99.test_mod.init.ModBlockEntities;
 import fr.silenthill99.test_mod.init.ModBlocks;
 import fr.silenthill99.test_mod.init.ModEntityTypes;
@@ -10,6 +11,7 @@ import fr.silenthill99.test_mod.utils.ModItemGroup;
 import fr.silenthill99.test_mod.utils.ModMenuTypes;
 import fr.silenthill99.test_mod.utils.ModSoundEvents;
 import fr.silenthill99.test_mod.villagers.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -68,12 +70,15 @@ public class Main
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+    @SuppressWarnings("unused")
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntityTypes.RHINO.get(), RhinoRenderer::new);
+
+            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }

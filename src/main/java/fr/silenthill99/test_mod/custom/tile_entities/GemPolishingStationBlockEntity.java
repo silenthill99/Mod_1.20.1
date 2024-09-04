@@ -1,5 +1,6 @@
 package fr.silenthill99.test_mod.custom.tile_entities;
 
+import fr.silenthill99.test_mod.custom.screens.GemPolishingStationMenu;
 import fr.silenthill99.test_mod.init.ModBlockEntities;
 import fr.silenthill99.test_mod.init.ModItems;
 import net.minecraft.core.BlockPos;
@@ -104,7 +105,7 @@ public class GemPolishingStationBlockEntity extends BlockEntity implements MenuP
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, @NotNull Inventory inventory, @NotNull Player player) {
-        return null;
+        return new GemPolishingStationMenu(i, inventory, this, this.data);
     }
 
     @Override
