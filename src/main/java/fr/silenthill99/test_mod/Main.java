@@ -7,6 +7,7 @@ import fr.silenthill99.test_mod.init.ModItems;
 import fr.silenthill99.test_mod.custom.entities.client.RhinoRenderer;
 import fr.silenthill99.test_mod.loot.ModLootModifier;
 import fr.silenthill99.test_mod.utils.ModItemGroup;
+import fr.silenthill99.test_mod.utils.ModMenuTypes;
 import fr.silenthill99.test_mod.utils.ModSoundEvents;
 import fr.silenthill99.test_mod.villagers.ModVillagers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -46,6 +47,7 @@ public class Main
         ModVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
         ModSoundEvents.SOUND_EVENTS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITY_TYPES.register(modEventBus);
+        ModMenuTypes.MENU_TYPES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         
