@@ -10,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+@SuppressWarnings("unused")
 public class ModItemGroup
 {
     static String base = "creativetab.";
@@ -61,6 +62,7 @@ public class ModItemGroup
 
                 pOutput.accept(ModBlocks.CATMINT.get());
                 pOutput.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+                pOutput.accept(ModBlocks.GEM_POLISHING_STATION.get());
             }).backgroundSuffix("item_search.png").withSearchBar()
             .build());
 }
