@@ -2,7 +2,7 @@ package fr.silenthill99.test_mod.custom.tile_entities;
 
 import fr.silenthill99.test_mod.custom.screens.GemPolishingStationMenu;
 import fr.silenthill99.test_mod.init.ModBlockEntities;
-import fr.silenthill99.test_mod.init.ModItems;
+import fr.silenthill99.test_mod.recipes.GemPolishingRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -27,11 +27,13 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
+@SuppressWarnings({"OptionalGetWithoutIsPresent", "DataFlowIssue"})
 public class GemPolishingStationBlockEntity extends BlockEntity implements MenuProvider {
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(2);
 
-    private final int INPUT_SLOT = 0;
     private final int OUTPUT_SLOT = 1;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
@@ -141,7 +143,9 @@ public class GemPolishingStationBlockEntity extends BlockEntity implements MenuP
     }
 
     private void craftItem() {
-        ItemStack result = new ItemStack(ModItems.SAPPHIRE.get(), 1);
+        Optional<GemPolishingRecipe> recipe = getCurrentRecipe();
+        ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
+        int INPUT_SLOT = 0;
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
 
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
@@ -157,10 +161,21 @@ public class GemPolishingStationBlockEntity extends BlockEntity implements MenuP
     }
 
     private boolean hasRecipe() {
-        boolean hasCraftingItem = this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.RAW_SAPPHIRE.get();
-        ItemStack result = new ItemStack(ModItems.SAPPHIRE.get());
-        return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) &&
-                canInsertItemIntoOutputSlot(result.getItem());
+        Optional<GemPolishingRecipe> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) return false;
+
+        ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
+
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+    }
+
+    private Optional<GemPolishingRecipe> getCurrentRecipe() {
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+        }
+        return this.level.getRecipeManager().getRecipeFor(GemPolishingRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {

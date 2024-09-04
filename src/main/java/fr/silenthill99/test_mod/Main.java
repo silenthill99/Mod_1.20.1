@@ -7,6 +7,7 @@ import fr.silenthill99.test_mod.init.ModEntityTypes;
 import fr.silenthill99.test_mod.init.ModItems;
 import fr.silenthill99.test_mod.custom.entities.client.RhinoRenderer;
 import fr.silenthill99.test_mod.loot.ModLootModifier;
+import fr.silenthill99.test_mod.recipes.ModRecipes;
 import fr.silenthill99.test_mod.utils.ModItemGroup;
 import fr.silenthill99.test_mod.utils.ModMenuTypes;
 import fr.silenthill99.test_mod.utils.ModSoundEvents;
@@ -50,6 +51,7 @@ public class Main
         ModSoundEvents.SOUND_EVENTS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITY_TYPES.register(modEventBus);
         ModMenuTypes.MENU_TYPES.register(modEventBus);
+        ModRecipes.RECIPES_SERIALIZER.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         
